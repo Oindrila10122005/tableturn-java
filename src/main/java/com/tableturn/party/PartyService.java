@@ -49,12 +49,12 @@ public class PartyService {
                 row.quotedMinutes(), row.quotedAt());
     }
 
-    public PartyView party(String branch, String partyId) {
+        public PartyView party(String branch, String partyId) {
         long branchId = branchId(branch);
         PartyRepository.Row row = PartyIds.parse(partyId).flatMap(id -> parties.find(branchId, id))
                 .orElseThrow(() -> new NoSuchParty(partyId));
         return new PartyView(partyId, row.name(), row.covers(), row.state(), row.position(), row.joinedAt(),
-                row.quotedMinutes(), row.quotedAt(), row.waitedMinutes());
+                row.quotedMinutes(), row.quotedAt(), row.waitedMinutes(), row.table());
     }
 
     /**
