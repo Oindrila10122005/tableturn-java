@@ -1,4 +1,4 @@
-package com.tableturn.party;
+package com.tableturn.waitlist;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

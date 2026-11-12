@@ -1,4 +1,4 @@
-package com.tableturn.party;
+package com.tableturn.waitlist;
 
 import java.time.Instant;
 
