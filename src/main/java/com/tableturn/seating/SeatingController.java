@@ -40,11 +40,12 @@ public class SeatingController {
             content = @Content(mediaType = ProblemExamples.PROBLEM, examples = {
                     @ExampleObject(name = "no-such-party", value = ProblemExamples.NO_SUCH_PARTY_SEAT),
                     @ExampleObject(name = "no-such-table", value = ProblemExamples.NO_SUCH_TABLE_SEAT)}))
-    @ApiResponse(responseCode = "409", description = "Too small, already seated, or not cleared",
+    @ApiResponse(responseCode = "409", description = "Too small, already seated, not cleared, or overtaking",
             content = @Content(mediaType = ProblemExamples.PROBLEM, examples = {
                     @ExampleObject(name = "table-too-small", value = ProblemExamples.TABLE_TOO_SMALL),
                     @ExampleObject(name = "already-seated", value = ProblemExamples.ALREADY_SEATED),
-                    @ExampleObject(name = "table-not-cleared", value = ProblemExamples.TABLE_NOT_CLEARED)}))
+                    @ExampleObject(name = "table-not-cleared", value = ProblemExamples.TABLE_NOT_CLEARED),
+                    @ExampleObject(name = "overtaking", value = ProblemExamples.OVERTAKING)}))
     public SeatingResponse seat(@Valid @RequestBody SeatRequest body) {
         return seatings.seat(BRANCH, body.partyId(), body.table());
     }

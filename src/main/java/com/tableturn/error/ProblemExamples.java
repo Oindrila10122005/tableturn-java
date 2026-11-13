@@ -56,6 +56,11 @@ public final class ProblemExamples {
             {"type":"/errors/no-such-seating","title":"No such seating","status":404,\
             "detail":"There is no seating S999","instance":"/seatings/S999/leave"}""";
 
+    public static final String OVERTAKING = """
+            {"type":"/errors/overtaking","title":"Overtaking","status":409,\
+            "detail":"Party W030 is waiting and fits table T11; seat them first","instance":"/seatings",\
+            "mustSeatFirst":"W030"}""";
+
     private ProblemExamples() {
     }
 }
